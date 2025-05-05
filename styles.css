@@ -16,8 +16,7 @@ body {
 }
 
 .pixel-border {
-  border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect width="12" height="12" fill="none" stroke="white" stroke-width="2"/></svg>')
-    2;
+  border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect width="12" height="12" fill="none" stroke="white" stroke-width="2"/></svg>') 2;
   border-style: solid;
   border-width: 4px;
   image-rendering: pixelated;
@@ -105,8 +104,13 @@ body {
   image-rendering: pixelated;
 }
 
+/* ============================ */
+/* FLIP CARD FIXED HEIGHT STYLE */
+/* ============================ */
 .pixel-card {
   perspective: 1000px;
+  min-height: 380px; /* Adjust if needed */
+  position: relative;
 }
 
 .pixel-card-inner {
@@ -117,9 +121,9 @@ body {
   transform-style: preserve-3d;
 }
 
-.pixel-card:hover .pixel-card-inner {
+/* .pixel-card:hover .pixel-card-inner {
   transform: rotateY(180deg);
-}
+} */
 
 .pixel-card-front,
 .pixel-card-back {
@@ -127,6 +131,8 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  top: 0;
+  left: 0;
 }
 
 .pixel-card-back {
@@ -191,3 +197,52 @@ body {
   margin-right: 4px;
   margin-bottom: 4px;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+
+  h1, h2, h3, .pixel-text {
+    font-size: 12px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .pixel-button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .pixel-box {
+    width: 100%;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+
+  .pixel-card {
+    min-height: 300px;
+  }
+
+  .pixel-avatar {
+    display: block;
+    margin: 0 auto;
+    max-width: 80px;
+  }
+
+  .hero-section {
+    padding: 16px;
+  }
+
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+}
+
